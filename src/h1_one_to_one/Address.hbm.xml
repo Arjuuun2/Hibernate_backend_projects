@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 Nov, 2022 11:28:33 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="h1_one_to_one.Address" table="address" catalog="hn_stud_address" optimistic-lock="version">
+        <id name="addressId" type="int">
+            <column name="address_id" />
+            <generator class="foreign">
+                <param name="property">student</param>
+            </generator>
+        </id>
+        <one-to-one name="student" class="h1_one_to_one.Student" constrained="true"></one-to-one>
+        <property name="addressStreet" type="string">
+            <column name="address_street" length="300" />
+        </property>
+        <property name="addressCity" type="string">
+            <column name="address_city" length="300" />
+        </property>
+        <property name="addressState" type="string">
+            <column name="address_state" length="300" />
+        </property>
+        <property name="addressZipcode" type="string">
+            <column name="address_zipcode" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

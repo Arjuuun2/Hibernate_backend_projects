@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 Nov, 2022 11:28:33 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="h1_one_to_one.Student" table="student" catalog="hn_stud_address" optimistic-lock="version">
+        <id name="studentId" type="java.lang.Integer">
+            <column name="student_id" />
+            <generator class="identity" />
+        </id>
+        <property name="studentName" type="string">
+            <column name="student_name" length="300" />
+        </property>
+        <property name="studentEmail" type="string">
+            <column name="student_email" length="200" />
+        </property>
+        <one-to-one name="address" class="h1_one_to_one.Address"></one-to-one>
+    </class>
+</hibernate-mapping>
